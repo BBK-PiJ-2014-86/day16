@@ -2,6 +2,12 @@ package day16;
 
 import java.io.File;
 
+/**
+ * @author ageorgiev
+ * Program that takes a name from the user at the command line and creates a directory on the desktop.
+ * 
+ */
+
 public class Exercise2 {
 	
 	private static String dir=null;
