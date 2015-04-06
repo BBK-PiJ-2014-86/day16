@@ -7,6 +7,7 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.Scanner;
 
 /**
  * 
@@ -51,10 +52,11 @@ public class Exercise4 {
 		
 		if (file1.exists()){
 			
-			if (file2.exists()) {
-				System.out.println(args[1]+ " exists. Type 1 if want to overwrite it. Type 0 if you wish to abort");
-				
-			}
+			if (file2.exists()) { // 
+				System.out.println(args[1]+ " exists. Type 0 if you wish to abort. Type anything else to continue");
+				Scanner sc = new Scanner (System.in);
+				int input = sc.nextInt();
+				if (input == 0) return; // abort if 0
 			
 				try {
 					FileReader fr = new FileReader (file1);
@@ -73,8 +75,9 @@ public class Exercise4 {
 					e.printStackTrace();
 				}
 			}
-		} //end of main if
-
+		} else {
+			System.out.println(args[0]+ " does not exist!");
+		}
 	}//end of main
-	
+}
 
