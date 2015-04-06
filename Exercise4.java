@@ -57,7 +57,7 @@ public class Exercise4 {
 				Scanner sc = new Scanner (System.in);
 				int input = sc.nextInt();
 				if (input == 0) return; // abort if 0
-			
+			}
 				try {
 					FileReader fr = new FileReader (file1);
 					BufferedReader br = new BufferedReader (fr);
@@ -67,14 +67,18 @@ public class Exercise4 {
 					
 					while ((s = br.readLine())!= null ) {
 						bw.write(s);
+						bw.newLine();
 					}
+					bw.flush();
+					br.close();
+					bw.close();
 					
 				} catch (FileNotFoundException e) {
 					e.printStackTrace();
 				} catch (IOException e) {
 					e.printStackTrace();
 				}
-			}
+			
 		} else {
 			System.out.println(args[0]+ " does not exist!");
 		}
