@@ -22,7 +22,7 @@ public class Exercise2 {
 		 
 		dir = args[0];
 		
-		System.out.println(dir);
+		System.out.println("You entered: "+dir);
 		path = path + dir;
 		
 		file = new File(path);
